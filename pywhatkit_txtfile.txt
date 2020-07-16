@@ -1,0 +1,2 @@
+selpath : /home/iangarcia/Documentos/Shelby/resources/chromeDriver/chromedriver
+--------------------
