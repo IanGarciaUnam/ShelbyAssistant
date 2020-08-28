@@ -9,11 +9,7 @@ import platform
 For each time that we init our programawe should know what OS we're using, 
 so, It just gonna be adajusted when it start
 '''
-print("Opening Chrome")
-if platform.system() == "Windows":
-	driver = webdriver.Chrome('chromedriver.exe')
-else:
-	driver = webdriver.Chrome()
+driver = webdriver.Chrome()
 
 def iniciar_mensajero():
 	# Checks if on Mac or Windows
@@ -21,7 +17,7 @@ def iniciar_mensajero():
     if platform.system() == "Windows":
         driver = webdriver.Chrome('chromedriver.exe')
     else:
-        driver = webdriver.Chrome()
+       	driver = webdriver.Chrome()
 
 
 def send_whatssapp_message(friend_name):
@@ -50,12 +46,16 @@ def start_sending_messages(my_script, iteraciones):
 					actions.send_keys(word, Keys.ENTER)
 					actions.perform()
 					sleep(float(settings.delay))
-iniciar_mensajero()
 
-send_whatssapp_message("Claudia")
-page_load()
-while settings.found_page == 0:
-          page_load()
-          print("PLEASE SCAN QR CODE WITH PHONE")
-          sleep(2)
-start_sending_messages("./message.txt", 4)
+def mensajea_por_whatssapp(nombre_del_contacto, archivo, iteraciones):
+	nombre_contacto=str(nombre_del_contacto)
+	nombre_archivo=str(archivo)
+	
+	send_whatssapp_message(nombre_contacto)
+	page_load()
+	while settings.found_page == 0:
+          	page_load()
+          	print("PLEASE SCAN QR CODE WITH PHONE")
+          	sleep(2)
+	start_sending_messages(nombre_archivo, int(iteraciones))
+mensajea_por_whatssapp("Carlos Wapo CC","message.txt",2)
