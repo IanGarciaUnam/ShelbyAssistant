@@ -17,7 +17,7 @@ tempo=str(time.get_local_time())
 voice.say('Hoy es:'+ date)
 voice.say('Son las:'+tempo)
 voice.greet()
-
+'''
 comando=str(ears.listen()).lower()
 comando_limpio=slugify(comando)#Normaliza la cadena de texto ingresada
 lista_de_palabras=comando_limpio.split(" ")
@@ -32,6 +32,7 @@ if 'busca' in lista_de_palabras:
 #if 'musica' in lista_de_palabras or 'videos'in lista_de_palabras or 'video' in lista_de_palabras:
 print("ejecutando a yt")
 hands.play_on_yt(comando)
+'''
 
 
 

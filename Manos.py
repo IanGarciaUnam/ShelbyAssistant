@@ -25,4 +25,3 @@ def send_whats(contacto, contenido):
 	#sendwhatmsg("contacto", "mensaje", hora de envio, minuto de envio )
 	now= now + timedelta(minutes=3)
 	kit.sendwhatmsg(str(contacto), str(contenido), now.hour, now.minute)
-
