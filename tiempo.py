@@ -14,7 +14,7 @@ def get_hour():
 def get_local_time():
 	hora=int(now.hour)
 	minute=now.minute
-	sun='am'
+	sun='a m'
 	if hora > 12:
 		hora=hora-12
 		sun='pm'
